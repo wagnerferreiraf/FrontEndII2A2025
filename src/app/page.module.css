@@ -1,0 +1,16 @@
+.h1 {
+  color: red;
+}
+
+.paragrafo {
+  font-size: 4rem;
+  background-color: aqua;
+}
+.blue {
+  background-color: blue;
+  color: white;
+}
+.red {
+  background-color: red;
+  color: white;
+}
