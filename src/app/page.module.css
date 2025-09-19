@@ -6,3 +6,17 @@
   font-size: 4rem;
   background-color: aqua;
 }
+
+.box {
+  width: 300px;
+  height: 300px;
+  border: 2px solid black;
+}
+
+.colorido {
+  background-color: yellow;
+}
+
+.cinza {
+  background-color: grey;
+}
