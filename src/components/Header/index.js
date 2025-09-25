@@ -1,15 +1,22 @@
 'use client';
-import { useState } from 'react';
+import { use, useState } from 'react';
 import styles from './Header.module.css';
 import Link from 'next/link';
 import Image from 'next/image';
 
 export default function Header() {
     const [show, setShow] = useState(false);
+    const [icone, setIcone] = useState('/images/open.png');
+
+    const clique = () => {
+        show ? setIcone('/images/open.png') : setIcone('/images/close.png');
+        setShow(!show);
+    }
+
     return (
         <>
             <header className={styles.headerMobile}>
-                <button onClick={() => { setShow(!show) }}>X</button>
+                <div className={styles.btn} onClick={() => { clique() }}><Image src={icone} alt='Menu' width={30} height={30}></Image></div>
                 {show &&
                     <div style={{ height: '200px', border: '2px solid black' }}>
                         {/* <p>MOBILE</p> */}
