@@ -9,3 +9,8 @@ export default function Produto({ id, nome, preco }) {
         </div>
     )
 }
+
+// mude o cursor para "mãozinha" sobre as linhas da tabela
+// coloque cores diferentes em linhas pares e ímpares
+// altere a cor ao passar o mouse sobre uma linha
+// coloque o card Produto centralizado (vertical e horizontalmente) na div modal

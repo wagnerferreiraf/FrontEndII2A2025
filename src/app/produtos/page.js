@@ -38,8 +38,11 @@ export default function Produtos() {
             >
                 <CardProduto
                     nome={produto.nome}
-                    id='1'
-                    preco='10,00'
+                    id={produto.id}
+                    preco={produto.preco.toLocaleString('pt-br', {
+                        style: 'currency',
+                        currency: 'BRL'
+                    })}
                 />
             </div>}
             <table className={styles.tbl}>
