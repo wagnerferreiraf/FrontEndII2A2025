@@ -1,3 +1,5 @@
+'use client';
+import { useState } from 'react';
 import styles from './page.module.css';
 
 export default function Produtos() {
@@ -14,9 +16,23 @@ export default function Produtos() {
         { id: 10, nome: "Mesa Digitalizadora", preco: 750 }
     ];
 
+    const [busca, setBusca] = useState('');
+    const produtosFiltro = produtos.filter(prod => prod.nome.toLowerCase().includes(busca.toLowerCase()));
+    const [show, setShow] = useState(false);
     return (
         <div>
-            <h1>Produtos</h1>
+            <div className={styles.divTitulo}>
+                <h1>Produtos</h1>
+                <input
+                    type="text"
+                    onChange={e => setBusca(e.target.value)}
+                    value={busca}
+                />
+            </div>
+            {show && <div 
+            className={styles.modal} 
+            onClick={() => setShow(false)}
+            ></div>}
             <table className={styles.tbl}>
                 <thead>
                     <tr>
@@ -26,12 +42,14 @@ export default function Produtos() {
                     </tr>
                 </thead>
                 <tbody>
-                    {produtos.map( p => (
-                        <tr key={p.id}>
+                    {produtosFiltro.map(p => (
+                        // ao clicar em uma linha da tabela, exiba uma div (modal) ocupando toda a viewport;
+                        // ao clicar na div, pare de exibir.
+                        <tr key={p.id} onClick={() => setShow(true)}>
                             <td>{p.id}</td>
                             <td>{p.nome}</td>
                             <td>{p.preco.toLocaleString('pt-br', {
-                                style:'currency',
+                                style: 'currency',
                                 currency: 'BRL'
                             })}</td>
                         </tr>

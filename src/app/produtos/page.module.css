@@ -1,8 +1,30 @@
 .tbl {
     border-collapse: collapse;
     margin: auto;
+    font-size: 2em;
 }
 .tbl td, .tbl th {
     border: 2px solid black;
     padding: 2px;
+}
+
+.divTitulo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 20px;
+    font-size: 2em;
+}
+
+.divTitulo input{
+    font-size: 30px;
+}
+
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: #ddddddce;
+    position:fixed;
+    top: 0;
+    left: 0;
 }
