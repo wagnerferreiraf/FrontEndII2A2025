@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import styles from './page.module.css';
+import CardProduto from '@/components/Produto';
 
 export default function Produtos() {
     const produtos = [
@@ -16,6 +17,8 @@ export default function Produtos() {
         { id: 10, nome: "Mesa Digitalizadora", preco: 750 }
     ];
 
+    const [produto, setProduto] = useState(null);
+
     const [busca, setBusca] = useState('');
     const produtosFiltro = produtos.filter(prod => prod.nome.toLowerCase().includes(busca.toLowerCase()));
     const [show, setShow] = useState(false);
@@ -29,10 +32,16 @@ export default function Produtos() {
                     value={busca}
                 />
             </div>
-            {show && <div 
-            className={styles.modal} 
-            onClick={() => setShow(false)}
-            ></div>}
+            {produto && <div
+                className={styles.modal}
+                onClick={() => setProduto(null)}
+            >
+                <CardProduto
+                    nome={produto.nome}
+                    id='1'
+                    preco='10,00'
+                />
+            </div>}
             <table className={styles.tbl}>
                 <thead>
                     <tr>
@@ -45,7 +54,8 @@ export default function Produtos() {
                     {produtosFiltro.map(p => (
                         // ao clicar em uma linha da tabela, exiba uma div (modal) ocupando toda a viewport;
                         // ao clicar na div, pare de exibir.
-                        <tr key={p.id} onClick={() => setShow(true)}>
+                        <tr key={p.id} onClick={() => setProduto(p) // passar um, produto para a variável de estado
+                        }>
                             <td>{p.id}</td>
                             <td>{p.nome}</td>
                             <td>{p.preco.toLocaleString('pt-br', {
