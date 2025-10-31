@@ -66,22 +66,9 @@ export default function Header() {
                                 <li className={styles.liSubMenu}><Link className={styles.link} href='/produtos'>Cadastrar</Link></li>
                                 <li className={styles.liSubMenu}><Link className={styles.link} href='/produtos'>Pesquisar</Link></li>
                             </ul>
-
                         </li>
-                        <li className={styles.liMenu}><Link className={styles.link} href='/produtos'>Produtos</Link>
-                            <ul className={styles.ulSubMenu}>
-                                <li className={styles.liSubMenu}><Link className={styles.link} href='/produtos'>Cadastrar</Link></li>
-                                <li className={styles.liSubMenu}><Link className={styles.link} href='/produtos'>Pesquisar</Link></li>
-                            </ul>
+                        <li className={styles.liMenu}><Link className={styles.link} href='/localidades'>Localidades</Link></li>
 
-                        </li>
-                        <li className={styles.liMenu}><Link className={styles.link} href='/produtos'>Produtos</Link>
-                            <ul className={styles.ulSubMenu}>
-                                <li className={styles.liSubMenu}><Link className={styles.link} href='/produtos'>Cadastrar</Link></li>
-                                <li className={styles.liSubMenu}><Link className={styles.link} href='/produtos'>Pesquisar</Link></li>
-                            </ul>
-
-                        </li>
                     </ul>
                 </nav>
             </header>
