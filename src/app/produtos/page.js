@@ -21,7 +21,6 @@ export default function Produtos() {
 
     const [busca, setBusca] = useState('');
     const produtosFiltro = produtos.filter(prod => prod.nome.toLowerCase().includes(busca.toLowerCase()));
-    const [show, setShow] = useState(false);
     return (
         <div>
             <div className={styles.divTitulo}>
@@ -34,16 +33,19 @@ export default function Produtos() {
             </div>
             {produto && <div
                 className={styles.modal}
-                onClick={() => setProduto(null)}
             >
-                <CardProduto
-                    nome={produto.nome}
-                    id={produto.id}
-                    preco={produto.preco.toLocaleString('pt-br', {
-                        style: 'currency',
-                        currency: 'BRL'
-                    })}
-                />
+                <div
+                onClick={() => setProduto(null)}
+                >
+                    <CardProduto
+                        nome={produto.nome}
+                        id={produto.id}
+                        preco={produto.preco.toLocaleString('pt-br', {
+                            style: 'currency',
+                            currency: 'BRL'
+                        })}
+                    />
+                </div>
             </div>}
             <table className={styles.tbl}>
                 <thead>

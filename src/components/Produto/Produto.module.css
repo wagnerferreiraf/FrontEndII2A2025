@@ -1,5 +1,5 @@
 .card {
-    width: 150px;
+    width: 160px;
     height: 200px;
     border: 2px solid black;
     display: flex;
@@ -7,6 +7,9 @@
     align-items: center;
     justify-content: center;
     border-radius: 5px;
+    background-color: aliceblue;
+    cursor: pointer;
+    gap: 10px;
 }
 
 .nome {
